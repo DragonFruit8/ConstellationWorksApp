@@ -1,0 +1,33 @@
+{
+  "name": "constellation-works",
+  "version": "1.0.0",
+  "description": "Website for Constellation Works - Building dignity-first pathways out of homelessness through community housing and ecological land restoration",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/constellationworks/ConstellationWorks.git"
+  },
+  "keywords": [
+    "nonprofit",
+    "housing",
+    "homelessness",
+    "land-restoration",
+    "community",
+    "michigan"
+  ],
+  "author": "Terra'Novare LLC",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.0"
+  }
+}
