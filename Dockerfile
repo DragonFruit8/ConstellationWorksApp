@@ -2,16 +2,34 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
-RUN npm install
+COPY client/package*.json ./client/
+COPY server/package*.json ./server/
 
+# Install dependencies
+RUN cd client && npm install
+RUN cd server && npm install
+
+# Copy source code
 COPY . .
-RUN npm run build
 
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
+# Build client
+RUN cd client && npm run build
 
-EXPOSE 80
+# Production stage
+FROM node:20-alpine
 
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+
+COPY --from=builder /app/server ./server
+COPY --from=builder /app/client/dist ./client/dist
+COPY --from=builder /app/server/node_modules ./server/node_modules
+
+WORKDIR /app/server
+
+ENV NODE_ENV=production
+
+EXPOSE 5000
+
+CMD ["node", "server.js"]

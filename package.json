@@ -1,33 +1,15 @@
 {
-  "name": "constellation-works",
+  "name": "constellation-works-pern",
   "version": "1.0.0",
-  "description": "Website for Constellation Works - Building dignity-first pathways out of homelessness through community housing and ecological land restoration",
-  "type": "module",
+  "description": "Constellation Works - Full-stack PERN application",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "db:init": "cd server && npm run db:init"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/constellationworks/ConstellationWorks.git"
-  },
-  "keywords": [
-    "nonprofit",
-    "housing",
-    "homelessness",
-    "land-restoration",
-    "community",
-    "michigan"
-  ],
   "author": "Terra'Novare LLC",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^5.0.0"
-  }
+  "license": "Apache-2.0"
 }

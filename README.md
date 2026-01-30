@@ -1,117 +1,101 @@
-# ✦ Constellation Works
+# ✦ Constellation Works - PERN Stack
 
 **Building Pathways from Crisis to Constellation**
 
-Constellation Works is a nonprofit initiative of [Terra'Novare LLC](mailto:terranovare42@gmail.com) dedicated to creating dignity-first pathways out of homelessness through integrated community housing and ecological land restoration.
+Full-stack web application for Constellation Works nonprofit - combining dignified housing solutions with ecological land restoration.
 
----
+## 🛠️ Tech Stack
 
-## 🌟 Our Mission
+- **Frontend**: React 18 + Vite + React Router
+- **Backend**: Node.js + Express.js
+- **Database**: PostgreSQL
+- **Auth**: JWT (JSON Web Tokens)
 
-> *"Homelessness is not inevitable. With the right support, people... come back."*
+## 🚀 Quick Start
 
-We combine housing stability with environmental stewardship, creating rural communities where both people and the earth can heal and thrive together.
+### Prerequisites
+- Node.js 18+
+- PostgreSQL 14+
 
-## 🏡 What We Do
+### Local Development
 
-### The Constellation Project
-A phased, dignity-first system that moves people from immediate survival to long-term stability:
-
-1. **Emergency Stabilization** — Immediate access to food, shelter, and safety
-2. **Transitional Support** — Building skills through land stewardship and community participation
-3. **Permanent Housing** — Low-impact, dignified housing integrated into restored landscapes
-4. **Sustained Purpose** — Long-term stability through meaningful work and community bonds
-
-### Rural Land Restoration
-Our Michigan-based project integrates housing with ecological rehabilitation:
-- Native vegetation planting
-- Pollinator habitat creation
-- Soil regeneration & erosion control
-- Wildlife-friendly corridors
-- Community food production
-
-## 💛 Support Our Work
-
-Your donation directly supports emergency stabilization, permanent housing development, and sustainable land restoration.
-
-| Platform | Details |
-|----------|---------|
-| Cash App | `$POWRDesign` |
-| Venmo | `@JTBPhoenix` |
-| PayPal | [paypal.me/JTBPhoenix](https://paypal.me/JTBPhoenix) |
-| Apple Pay | (734) 351-8601 |
-| Check | Payable to: The Constellation Project - Terra'Novare, LLC |
-
-**Corporate Giving:** [jtb.phoenixone@gmail.com](mailto:jtb.phoenixone@gmail.com)
-
-## 🚀 Development
-
-This website is built with React and Vite.
-
+1. **Clone and install:**
 ```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+git clone https://github.com/TzvetomirTodorov/ConstellationWorks.git
+cd ConstellationWorks
+cd server && npm install
+cd ../client && npm install
 ```
 
-## 📋 Project Structure
+2. **Set up environment:**
+```bash
+cp server/.env.example server/.env
+# Edit server/.env with your DATABASE_URL and JWT_SECRET
+```
+
+3. **Initialize database:**
+```bash
+cd server && npm run db:init
+```
+
+4. **Run development servers:**
+```bash
+# Terminal 1 - Backend (port 5000)
+cd server && npm run dev
+
+# Terminal 2 - Frontend (port 3000)
+cd client && npm run dev
+```
+
+## 📁 Project Structure
 
 ```
 constellation-works/
-├── index.html          # HTML entry point
-├── package.json        # Project dependencies
-├── vite.config.js      # Build configuration
-└── src/
-    ├── main.jsx        # React entry point
-    └── App.jsx         # Main application component
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/     # Reusable components
+│   │   ├── pages/          # Page components
+│   │   ├── context/        # React context (Auth)
+│   │   └── App.jsx         # Main app with routing
+│   └── package.json
+├── server/                 # Express backend
+│   ├── routes/             # API routes
+│   ├── middleware/         # Auth middleware
+│   ├── config/             # DB connection & schema
+│   └── server.js           # Express server
+├── Dockerfile              # Production build
+├── railway.json            # Railway deployment config
+└── README.md
 ```
 
-## 🚀 Deployment (Railway)
+## 🔐 Features
 
-This project is configured for one-click Railway deployment.
+- **User Authentication**: Register, login, JWT-based auth
+- **Admin Dashboard**: User management, donation tracking, application review
+- **Donation System**: Record and track donations
+- **Applications**: Volunteer and resident application forms
+- **Contact Form**: Public contact submissions
+- **Blog/News**: Content management for updates
 
-### Quick Deploy
-1. Push this repo to GitHub
-2. Go to [railway.app](https://railway.app) and sign in
-3. Click "New Project" → "Deploy from GitHub repo"
-4. Select your ConstellationWorks repository
-5. Railway auto-detects the Dockerfile and deploys!
+## 🌐 Railway Deployment
 
-### Custom Domain Setup
-After deployment:
-1. Go to your Railway project → Settings → Domains
-2. Add your custom domain (e.g., `constellationworks.app`)
-3. Railway provides DNS records to add at your registrar
-4. Add a CNAME record pointing to your Railway URL
-
-### Environment
-- Build: Docker (Node 20 + Nginx)
-- Static hosting with SPA routing
-- Gzip compression enabled
-- Security headers configured
-
-## 📜 License
-
-Licensed under [Apache License 2.0](LICENSE)
+1. Push to GitHub
+2. Create new Railway project
+3. Add PostgreSQL database service
+4. Connect GitHub repo
+5. Set environment variables:
+   - `DATABASE_URL` (auto-set by Railway PostgreSQL)
+   - `JWT_SECRET` (generate a secure random string)
+   - `NODE_ENV=production`
+6. Deploy!
 
 ## 📞 Contact
 
 **Joshua Tramel Byers**  
 Co-Founder, Constellation Works  
-📧 [terranovare42@gmail.com](mailto:terranovare42@gmail.com)  
+📧 terranovare42@gmail.com  
 📱 (734) 351-8601
 
 ---
 
-<p align="center">
-  <em>Together, we are building second chances that last.</em><br>
-  <strong>✦ Constellation Works ✦</strong>
-</p>
+**✦ Together, we build second chances that last. ✦**
