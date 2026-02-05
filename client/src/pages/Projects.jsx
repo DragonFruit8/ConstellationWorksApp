@@ -1,18 +1,18 @@
 const Projects = () => {
   const projects = [
     {
-      title: 'Phoenix Rising Housing Initiative',
-      status: 'Active',
+      title: 'The Constellation Project',
+      status: 'Planning',
       description: 'Creating transitional housing for individuals emerging from crisis, with wraparound support services.',
     },
     {
-      title: 'Terra Nova Land Restoration',
+      title: "Terr'Nova Land Restoration",
       status: 'Planning',
       description: 'Restoring degraded land through permaculture practices while creating job training opportunities.',
     },
     {
       title: 'Constellation Community Gardens',
-      status: 'Active',
+      status: 'Pending',
       description: 'Urban gardens that provide food security, community connection, and therapeutic green spaces.',
     }
   ]
